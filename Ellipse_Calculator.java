@@ -1,18 +1,18 @@
 import java.util.*;
 
-/* An ellipse is a conic section from Mathematics. An ellipse comes in the standard form of x²/a² + y²/b² = 1.
+/* An ellipse is a conic section from Mathematics. An ellipse comes in the standard form of xÂ²/aÂ² + yÂ²/bÂ² = 1.
  * However, the graph of the ellipse can change based on the values of x, y, a and b. An ellipse in standard form
- * is horizontal and centered at the origin (0,0). An ellipse can become vertical in the case that y² and x² swap 
- * places in the equation. An ellipse is can be horizontally and/or vertically shifted from the origin, when this 
- * happens the ellipse comes in the form (x-h)²/a² + (y-k)²/b² = 1, with h and k representing the shifts from the
- * x and y axes respectively. The graphs of ellipses have many properties such as the vertices, the foci and the 
- * major and minor axes. This program asks the user whether for the a² and b² values of the ellipse, it also asks 
- * for the h and k values if the user specifies that the ellipse is not centered at the origin. I have created an 
+ * is horizontal and centered at the origin (0,0). An ellipse can become vertical in the case that yÂ² is larger than xÂ²
+ * in the equation. An ellipse is can be horizontally and/or vertically shifted from the origin, when this happens
+ * the ellipse comes in the form (x-h)Â²/aÂ² + (y-k)Â²/bÂ² = 1, with h and k representing the shifts from the x and y
+ * axes respectively. The graphs of ellipses have many properties such as the vertices, the foci and the major
+ * and minor axes. This program asks the user whether for the aÂ² and bÂ² values of the ellipse, it also asks 
+ * for the h and k values if the user specifies that the ellipse is not centered at the origin. - I have created an 
  * ellipse class for this program, it contains two constructors, one for if the ellipse is centered at the origin 
- * and one if it isn't. The program lastly asks if the x² comes for in the equation or not, so as to know whether 
- * or not the ellipse is vertical. Then an ellipse object is instantiated with the x and y values and a boolean 
- * value that is set to true if x² comes first in the equation. The ellipse is instantiated with a different constructor
- * that also sends the h and k values as parameters if the ellipse is shifted from the origin. Once this is done, 
+ * and one if it isn't. - The program then asks if the denominator of xÂ² is larger in the equation or not, so as to know
+ * whether or not the ellipse is vertical. Then an ellipse object is instantiated with the x and y values and a boolean 
+ * value that is set to true if xÂ²'s denominator is larger in the equation. The ellipse is instantiated with a different 
+ * constructor that also sends the h and k values as parameters if the ellipse is shifted from the origin. Once this is done, 
  * the custom toString method of the ellipse class is called which then prints all the relevant information such as 
  * the coordinates of the vertices, foci and the center, the major and minor axes and the equation of ellipse itself 
  * using getter methods. Then the program asks the user if they want to calculate another ellipse, if they say yes, 
@@ -41,25 +41,25 @@ public class Ellipse_Calculator {
 			
 			if(origin.equals("Yes") || origin.equals("yes")) {
 				
-				//asks user to the denominators under x² and y² which are a² and b²
+				//asks user to the denominators under xÂ² and yÂ² which are aÂ² and bÂ²
 				
-				System.out.println("Enter the value for a²");
+				System.out.println("Enter the value for aÂ²");
 				aSquared = input.nextInt();
 				
-				System.out.println("Enter the value for b²");
+				System.out.println("Enter the value for bÂ²");
 				bSquared = input.nextInt();
 				
-				/* asks user if the denominator under y² is larger than the denominator under x² because
-				 * in an ellipse, if the larger denominator is the a² value, and if the denominator under
-				 * y² is bigger, that means the ellipse is vertical. */
+				/* asks user if the denominator under yÂ² is larger than the denominator under xÂ² because
+				 * in an ellipse, if the larger denominator is the aÂ² value, and if the denominator under
+				 * yÂ² is bigger, that means the ellipse is vertical. */
 				
-				System.out.println("Is the denominator under y² larger than the denominator under x²?");
+				System.out.println("Is the denominator under yÂ² larger than the denominator under xÂ²?");
 				underX = input.next();
 				if (underX.equals("No") || underX.equals("no"))
 					aUnderX = true;
 				
 				/* creates an ellipse object using the constructor for centered ellipses, which take the 
-				 * values of a², b² and the boolean variable aUnderX as parameters, aUnderX determines 
+				 * values of aÂ², bÂ² and the boolean variable aUnderX as parameters, aUnderX determines 
 				 * whether or not the ellipse is vertical or horizontal, if aUnderX is true then it is
 				 * horizontal, otherwise the ellipse is vertical */
 				
@@ -70,13 +70,13 @@ public class Ellipse_Calculator {
 			
 			if(origin.equals("No") || origin.equals("no")) {
 				
-				System.out.println("Enter the value for a²");
+				System.out.println("Enter the value for aÂ²");
 				aSquared = input.nextInt();
 				
-				System.out.println("Enter the value under b²");
+				System.out.println("Enter the value under bÂ²");
 				bSquared = input.nextInt();
 				
-				//like the previous if-statement it asks for the values of a² and b², but also asks for h and k
+				//like the previous if-statement it asks for the values of aÂ² and bÂ², but also asks for h and k
 				
 				System.out.println("Enter the value for h");
 				h = input.nextInt(); //h represents the horizontal shift from the origin in the equation of an ellipse
@@ -84,20 +84,20 @@ public class Ellipse_Calculator {
 				System.out.println("Enter the value for k");
 				k = input.nextInt(); //k represents the vertical shift from the origin in the equation of an ellipse
 				
-				/* just like in the previous if-statement, it asks again whether or not the value under y² is larger
-				 * than the value under x², if the answer is no then aUnderX is set to true, otherwise it's false. 
+				/* just like in the previous if-statement, it asks again whether or not the value under yÂ² is larger
+				 * than the value under xÂ², if the answer is no then aUnderX is set to true, otherwise it's false. 
 				 * If aUnderX is true then the ellipse is horizontal, other it's vertical. */
 				
-				System.out.println("Is the denominator under y² larger than the denominator under x²?");
+				System.out.println("Is the denominator under yÂ² larger than the denominator under xÂ²?");
 				underX = input.next();
 				if (underX.equals("No") || underX.equals("no"))
 					aUnderX = true;
 				
 				/* now the ellipse is instantaited using the constructor for ellipses shifted from the origin, it sends
-				 * a², b² and aUnderX as parameters just like the other constructor, but this constructor also takes the
+				 * aÂ², bÂ² and aUnderX as parameters just like the other constructor, but this constructor also takes the
 				 * h and k values as parameters as well. */
 				
-				ellipse = new Ellipse(aSquared,bSquared,h,k,aUnderX); //creates a shifted ellipse with the given a², b², h and k values
+				ellipse = new Ellipse(aSquared,bSquared,h,k,aUnderX); //creates a shifted ellipse with the given aÂ², bÂ², h and k values
 				}
 			
 			/* now that the ellipse was created, it calculates and returns all the relevant info of the ellipse
@@ -127,13 +127,13 @@ public class Ellipse_Calculator {
 
 /* Below is the class that defines the ellipse object, there are many data fields, there are 4 ints for the a, b, h and k
  * values of a ellipse. The c value is stored in a double because the c value is obtained by finding the root of the sums
- * of a² and b², which is more often than not, not a perfect square and thus resulting in a long decimal value. After that
- * there are boolean values for whether or not the ellipse is centered at the origin, and if the x² comes first in the 
+ * of aÂ² and bÂ², which is more often than not, not a perfect square and thus resulting in a long decimal value. After that
+ * there are boolean values for whether or not the ellipse is centered at the origin, and if the xÂ² comes first in the 
  * equation, these are useful for knowing which form of the equation to use as there is a field for the equation of the 
  * ellipse which can be obtained with a getter method, similarly there are fields for coordinates of the vertices, foci, 
  * and center, and fields for the major and minor axes of the ellipse. All these values can also be obtained with getter 
  * methods, though some of them are assigned their values within the constructors rather than in their respective getter
- * methods. There are two constructors, the first is simply called with the a², b² and aUnderX values if the ellipse is
+ * methods. There are two constructors, the first is simply called with the aÂ², bÂ² and aUnderX values if the ellipse is
  * centered at the origin, otherwise its shifted, and in that case the second constructor is called with the same values and two
  * addition values, h and k which represent the horizontal and vertical shifts respectively. Lastly, there is a custom toString
  * method which returns a String containing all the relevant information obtained after all the properties of the ellipse
@@ -145,7 +145,7 @@ class Ellipse {
 	private int minorAxis; //int that stores the value of the minor axis of an ellipse
 	private int a, b; //ints that store the a and b values of an ellipse
 	private int h = 0, k = 0; //ints that store the h and k values of an ellipse, h and k are 0 when the ellipse is shifted
-	private double c; //double for the c value, because c is often a double because its the root of the difference of a² and b²
+	private double c; //double for the c value, because c is often a double because its the root of the difference of aÂ² and bÂ²
 	private boolean aUnderX; //boolean to check if a is under x or not, if it is then its vertical
 	private boolean isCentered; //boolean to check if the ellipse is centered at the origin
 	private String equation; //holds the final equation of the ellipse
@@ -157,7 +157,7 @@ class Ellipse {
 	//constructor for an ellipse centered at the origin
 	public Ellipse(int aSquared, int bSquared, boolean aUnderX) { //takes in the values of the 2 denominators
 	
-		//the denominators of x² and y² in an ellipse are a² and b², their roots are appropriately being assigned to the a and b fields
+		//the denominators of xÂ² and yÂ² in an ellipse are aÂ² and bÂ², their roots are appropriately being assigned to the a and b fields
 		a = (int) Math.sqrt(aSquared); 
 		b = (int) Math.sqrt(bSquared);
 		
@@ -172,7 +172,7 @@ class Ellipse {
 		this.aUnderX = aUnderX; //assigns the value of the boolean aUnderX to the aUnderX field of the ellipse
 
 		//finding c which is the distance from the center to the foci
-		//the equation is c² = a² - b²
+		//the equation is cÂ² = aÂ² - bÂ²
 		c = Math.sqrt((aSquared-bSquared));
 		
 		center = "(0,0)"; //since this is a centered ellipse, the center is (0,0)
@@ -180,14 +180,14 @@ class Ellipse {
 		isCentered = true; //assigns true to isCentered because the ellipse is centered
 		
 		/* The following if-statement checks if aUnderX is true, then the ellipse is horizontal, so an equation is built and assigned 
-		 * to the string that holds the equation, the equation is in the form: x²/a² + y²/b² = 1. If aUnderX is false, then the ellipse 
-		 * is vertical and it means the value of a² is under y² as opposed to x², that means the equation comes in the form: y²/a² + x²/b² = 1. */
+		 * to the string that holds the equation, the equation is in the form: xÂ²/aÂ² + yÂ²/bÂ² = 1. If aUnderX is false, then the ellipse 
+		 * is vertical and it means the value of aÂ² is under yÂ² as opposed to xÂ², that means the equation comes in the form: yÂ²/aÂ² + xÂ²/bÂ² = 1. */
 		
 		if (this.aUnderX == true) 
-			equation = "x²/" + aSquared + " + y²/" + bSquared + " = 1"; 
+			equation = "xÂ²/" + aSquared + " + yÂ²/" + bSquared + " = 1"; 
 		
 		//this executes if aUnderX is false
-		else equation = "y²/" + aSquared + " + x²/" + bSquared + " = 1";
+		else equation = "yÂ²/" + aSquared + " + xÂ²/" + bSquared + " = 1";
 		
 	} //end of constructor
 	
@@ -196,7 +196,7 @@ class Ellipse {
 	 * except that it also takes two new values as parameters, h and k, h and k represent the horizontal and vertical shifts from
 	 * the origin, in the constructor they are assigned to the private h and k fields of this ellipse class. Aside from this difference
 	 * the constructor does everything else the previous constructor does. Though there is a slight difference when building the equation
-	 * because in a shifted ellipse, the form of the equation of the ellipse is in the form (x-h)²/a² + (y-k)²/b² which is also taken care
+	 * because in a shifted ellipse, the form of the equation of the ellipse is in the form (x-h)Â²/aÂ² + (y-k)Â²/bÂ² which is also taken care
 	 * of in the constructor. */
 	
 	public Ellipse(int aSquared, int bSquared, int h, int k, boolean aUnderX) {
@@ -223,14 +223,14 @@ class Ellipse {
 		center = "(" + (0 - h) + "," +  (0 - k) + ")";
 		
 		/* The following if-statement checks if aUnderX is true, then the ellipse is horizontal, so an equation is built and assigned 
-		 * to the string that holds the equation, the equation is in the form: (x-h)²/a² + (y-k)²/b² = 1. If aUnderX is false, then the 
-		 * ellipse is vertical and it means the value of a² is under y² as opposed to x², that means the equation comes in the form: 
-		 * (y-k)²/a² + (x-h)²/b² = 1. */
+		 * to the string that holds the equation, the equation is in the form: (x-h)Â²/aÂ² + (y-k)Â²/bÂ² = 1. If aUnderX is false, then the 
+		 * ellipse is vertical and it means the value of aÂ² is under yÂ² as opposed to xÂ², that means the equation comes in the form: 
+		 * (y-k)Â²/aÂ² + (x-h)Â²/bÂ² = 1. */
 		
 		if (aUnderX == true)
-			equation = "(x - " + h + ")²/" + aSquared + " + (y - " + k + ")²/" + bSquared + " = 1";
+			equation = "(x - " + h + ")Â²/" + aSquared + " + (y - " + k + ")Â²/" + bSquared + " = 1";
 		
-		else equation = "(y - " + k + ")²/" + aSquared + " + (x - " + h + ")²/" + bSquared + " = 1";
+		else equation = "(y - " + k + ")Â²/" + aSquared + " + (x - " + h + ")Â²/" + bSquared + " = 1";
 		
 	}
 	
@@ -248,10 +248,10 @@ class Ellipse {
 	//returns whether or not the ellipse is centered at the origin, true if it is centered, false if isn't 
 	public boolean isCentered() {return isCentered;}
 	
-	//returns the value of aUnderX, if aUnderX is true then a² is under x² or (x-h)² and it's horizontal
+	//returns the value of aUnderX, if aUnderX is true then aÂ² is under xÂ² or (x-h)Â² and it's horizontal
 	public boolean isHorizontal() {return aUnderX;}
 	
-	//returns the value of aUnderX, if aUnderX is false then a² is under y² or (y-k)² then it's vertical
+	//returns the value of aUnderX, if aUnderX is false then aÂ² is under yÂ² or (y-k)Â² then it's vertical
 	public boolean isVertical() {
 		if (aUnderX == false) return true;
 		else return false;
